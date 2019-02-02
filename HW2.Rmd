@@ -1,0 +1,106 @@
+---
+title: "HW2"
+author: "Your Name Here"
+output: pdf_document
+---
+
+The code below just loads some packages and makes it so that enough digits are printed that you won't get confused by rounding errors.
+
+```{r, message = FALSE}
+library(dplyr) # functions like summarize
+library(ggplot2) # for making plots
+library(mosaic) # convenient interface to t.test function
+
+options("pillar.sigfig" = 10) # print 10 significant digits in summarize output
+```
+
+## Problem 1: Adapted from Sleuth3 2.20
+
+Researchers assigned 7 volunteer males to a special fish oil diet.  They recorded each subject's diastolic blood pressure at baseline and again after four weeks on the diet.  The researcher's interest was in the reduction diastolic blood pressure (mm of mercury) between baseline and 4 weeks later (a positive reduction is a good thing).  The R code below reads in the data set.  The variable `BP` records each subject's reduction in blood pressure.
+
+
+```{r}
+fish_oil <- read.csv("http://www.evanlray.com/data/sleuth3/ex0112_oil_diets.csv") %>%
+  filter(Diet == "FishOil")
+```
+
+### (a) Define the relevant parameter(s) the researchers wanted to estimate.
+
+
+
+### (b) Calculate the sample mean and standard deviation of the blood pressure reduction.
+
+
+
+### (c) Compute the standard error for the sample mean.  What are the degrees of freedom?
+
+
+
+### (d) Conduct a relevant hypothesis test.
+
+#### i. Define the null and alternative hypotheses for the test
+
+
+
+#### ii. Find the value of the $t$ statistic for this test.   What is the interpretation of this statistic?
+
+
+
+#### iii. Find the p-value for the test using the `t.test` function in R.
+
+```{r}
+
+```
+
+#### iv. What is the interpretation of the p-value?  (I'm not looking for a conclusion about strength of evidence yet, just a statement of what the p-value is in the context of this example.)
+
+
+
+#### v. What is the conclusion of the test?  Please state this in terms of strength of evidence about the null hypothesis.
+
+
+
+### (e) Find a relevant confidence interval.
+
+#### i. Find a confidence interval from the formula, using output from the `qt` function as needed.  Confirm that your interval matches the interval from the output of `t.test` in part (d) iii, up to rounding error.
+
+```{r}
+
+```
+
+#### ii. Interpret your interval in context, including a statement of what the phrase "95% confident" means.
+
+
+
+#### iii. Is the confidence interval from part ii guaranteed to contain the sample mean?
+
+
+
+#### iv. Is the confidence interval from part ii guaranteed to contain the population mean?
+
+
+
+
+
+## Problem 2: Adapted from Sleuth3 2.23
+
+Ther National Highway System Designation Act was signed into law in the United States on November 29, 1995.  Among other things, the act abolished the federal mandate of 55-mile-per-hour maximum speed limits on roads in the United States and permitted states to establish their own limits.  Of the 50 states (plus the District of Columbia), 32 increased their speed limits either at the beginning of 1996 or sometime during 1996.
+
+The R code below reads in data with the percentage changes in interstate highway traffic fatalities from 1995 to 1996.  Among the states where the speed limit increased, what evidence is there that the average percent change in fatalities was different from 0?
+
+Conduct a full analysis, including:
+
+ * an appropriate plot with informative axis labels,
+ * summary statistics that would be meaningful to someone who had not taken a statistics class (i.e., don't report the t statistic),
+ * a confidence interval, and
+ * a hypothesis test.
+
+Interpret all of your results in context.  Explain how to interpret the p-value for the test and the conclusions that can be drawn from it as though to someone who had not taken a statistics class.  Similarly, explain how to interpret your confidence interval.  You do not need to calculate the p-value or the confidence interval by hand; you can use output from the `t.test` function.  What conclusions can be drawn about whether this policy change was a good idea?
+
+```{r}
+fatalities <- read.csv("http://www.evanlray.com/data/sleuth3/ex0223_highway_safety.csv") %>%
+  filter(SpeedLimit == "Inc")
+```
+
+
+
